@@ -1,0 +1,49 @@
+INSERT INTO vehiculo (marcamodelo, ano, cor, kms, prezo) VALUES
+    ('Audi A4', 2018, 'Rojo', 50000, 25000.00),
+    ('Toyota Corolla', 2015, 'Azul', 80000, 18000.00),
+    ('Honda Civic', 2017, 'Negro', 45000, 19000.00),
+    ('Ford Mustang', 2019, 'Blanco', 20000, 35000.00),
+    ('BMW X5', 2016, 'Gris', 60000, 30000.00),
+    ('Mercedes-Benz C-Class', 2018, 'Negro', 40000, 28000.00),
+    ('Chevrolet Silverado', 2014, 'Verde', 100000, 22000.00),
+    ('Mazda CX-5', 2019, 'Gris', 25000, 27000.00),
+    ('Jeep Wrangler', 2017, 'Rojo', 40000, 32000.00),
+    ('Nissan Altima', 2016, 'Plateado', 60000, 17000.00),
+    ('Toyota RAV4', 2018, 'Blanco', 35000, 23000.00),
+    ('Chevrolet Tahoe', 2015, 'Negro', 90000, 28000.00),
+    ('Audi Q5', 2019, 'Rojo', 15000, 38000.00),
+    ('Honda CR-V', 2017, 'Azul', 50000, 20000.00),
+    ('Ford Explorer', 2016, 'Gris', 70000, 26000.00),
+    ('Subaru Outback', 2018, 'Rojo', 40000, 22000.00),
+    ('Chevrolet Camaro', 2017, 'Negro', 35000, 32000.00),
+    ('Nissan Rogue', 2015, 'Gris', 80000, 19000.00),
+    ('Toyota Highlander', 2019, 'Blanco', 20000, 36000.00),
+    ('Ford F-150', 2016, 'Plateado', 60000, 25000.00);
+    
+INSERT INTO accesorio (nome, id_vehiculo) VALUES
+    ('Kit de xenón', (SELECT id FROM vehiculo WHERE marcamodelo = 'Audi A4')),
+    ('Alfombrillas de goma', (SELECT id FROM vehiculo WHERE marcamodelo = 'Audi A4')),
+    ('Cámara de visión trasera', (SELECT id FROM vehiculo WHERE marcamodelo = 'Toyota Corolla')),
+    ('Sistema de sonido premium', (SELECT id FROM vehiculo WHERE marcamodelo = 'Toyota Corolla')),
+    ('Asientos de cuero', (SELECT id FROM vehiculo WHERE marcamodelo = 'Honda Civic')),
+    ('Spoiler trasero', (SELECT id FROM vehiculo WHERE marcamodelo = 'Ford Mustang')),
+    ('Portaequipajes de techo', (SELECT id FROM vehiculo WHERE marcamodelo = 'BMW X5')),
+    ('Faros antiniebla', (SELECT id FROM vehiculo WHERE marcamodelo = 'Mercedes-Benz C-Class')),
+    ('Estribos laterales', (SELECT id FROM vehiculo WHERE marcamodelo = 'Chevrolet Silverado')),
+    ('Navegador GPS', (SELECT id FROM vehiculo WHERE marcamodelo = 'Mazda CX-5')),
+    ('Suspensión todoterreno', (SELECT id FROM vehiculo WHERE marcamodelo = 'Jeep Wrangler')),
+    ('Asientos calefactables', (SELECT id FROM vehiculo WHERE marcamodelo = 'Nissan Altima')),
+    ('Kit de seguridad', (SELECT id FROM vehiculo WHERE marcamodelo = 'Toyota RAV4')),
+    ('Sistema de entretenimiento', (SELECT id FROM vehiculo WHERE marcamodelo = 'Chevrolet Tahoe')),
+    ('Asistente de aparcamiento', (SELECT id FROM vehiculo WHERE marcamodelo = 'Audi Q5')),
+    ('Techo solar', (SELECT id FROM vehiculo WHERE marcamodelo = 'Honda CR-V')),
+    ('Rieles de techo', (SELECT id FROM vehiculo WHERE marcamodelo = 'Ford Explorer')),
+    ('Sistema de detección de punto ciego', (SELECT id FROM vehiculo WHERE marcamodelo = 'Subaru Outback')),
+    ('Llantas deportivas', (SELECT id FROM vehiculo WHERE marcamodelo = 'Chevrolet Camaro')),
+    ('Sistema de arranque sin llave', (SELECT id FROM vehiculo WHERE marcamodelo = 'Nissan Rogue')),
+    ('Sistema de asistencia de frenado', (SELECT id FROM vehiculo WHERE marcamodelo = 'Toyota Highlander')),
+    ('Caja de herramientas para carga', (SELECT id FROM vehiculo WHERE marcamodelo = 'Ford F-150'));
+
+    
+
+

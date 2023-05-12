@@ -1,0 +1,40 @@
+DROP TABLE IF EXISTS accesorio;
+DROP TABLE IF EXISTS vehiculo;
+DROP TABLE IF EXISTS comprador;
+
+
+
+CREATE TABLE comprador (
+    id bigserial ,
+    dni varchar(9) NOT NULL UNIQUE ,
+    nome varchar(32) NOT NULL,
+    direccion varchar(128),
+    telefono varchar(13),
+    PRIMARY KEY(id)
+);
+
+CREATE TABLE vehiculo (
+    id bigserial ,
+    marcamodelo varchar(64) NOT NULL,
+    ano smallint ,
+    CONSTRAINT c_vehiculo_ano_valido CHECK ( ano >= 1886 AND ano <= date_part('year', now())),
+    cor varchar(16) NOT NULL,
+    kms int CONSTRAINT c_vehiculo_kms_validos CHECK ( kms >= 0 ),
+    prezo numeric (9,2) NOT NULL,
+    CONSTRAINT c_vehiculo_prezo_valido CHECK ( prezo > 0 ),
+    datacompra date,
+    id_comprador bigint , 
+    CONSTRAINT fk_vehiculo_comprador FOREIGN KEY(id_comprador) REFERENCES comprador(id) ON DELETE NO ACTION,
+    PRIMARY KEY(id)
+);
+
+CREATE TABLE accesorio (
+    id bigserial ,
+    nome varchar(64) NOT NULL,
+    id_vehiculo bigint ,
+    CONSTRAINT fk_accesorio_vehiculo FOREIGN KEY(id_vehiculo) REFERENCES vehiculo(id) ON DELETE CASCADE,
+    PRIMARY KEY(id)
+);
+
+
+            
